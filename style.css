@@ -1,0 +1,51 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 140px;
+    margin: 10px;
+    padding: 60px 10px 10px;
+    width: 400px;
+    height: 600px;
+    background-color: lightgreen;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px grey;
+}
+#display {
+    grid-column: 1 / span 4;
+    font-size: 50px;
+    text-align: right;
+    padding: 0px 5px
+}
+#innerDisplay {
+    height: 60px;
+    width: 370px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+    box-shadow: 1px 1px 1px grey;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: '';
+
+}
+#backspace {
+    grid-column: 1 / span 2;
+}
+#clear {
+    grid-column: 3 / span 2;
+}
+.btnWide {
+    width: 190px;
+}
+button {
+    font-size: 40px;
+    margin: 0 auto;
+    display: block;
+    width: 90px;
+    padding: 10px 0px;
+    background-color: white;
+    border-radius:10px;
+}
+div {
+    //border: thin solid black;
+}
