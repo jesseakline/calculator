@@ -1,5 +1,5 @@
 let total = '';
-let tempTotal = 0;
+let tempTotal = '';
 let operator = '';
 
 let display = document.getElementById('innerDisplay');
@@ -15,7 +15,7 @@ function addData(e) {
 const oprKeys = document.querySelectorAll('.oprKeys');
 oprKeys.forEach(key => key.addEventListener('click', addOpr));
 function addOpr(e) {
-    tempTotal = parseInt(display.textContent);
+    tempTotal = parseFloat(display.textContent);
     total = 0;
     display.textContent = '';
     operator = this.value;
@@ -31,13 +31,21 @@ clear.addEventListener('click', function(e) {
 const backspace = document.querySelector('#btnBack');
 backspace.addEventListener('click', function(e) {
     total = total.slice(0, -1);
-    //display.textContent = total;
+    display.textContent = total;
 })
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', function(e) {
-    total = parseInt(total);
+    total = parseFloat(total);
     operate(tempTotal, total, operator);
+})
+
+const decimal = document.querySelector('#decimal');
+decimal.addEventListener('click', function(e) {
+    if (!total.includes('.')) {
+    display.textContent += this.value;
+    total += this.value;
+    }
 })
 
 function add(num1, num2) {
